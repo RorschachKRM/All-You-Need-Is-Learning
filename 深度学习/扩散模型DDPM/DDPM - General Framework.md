@@ -11,9 +11,9 @@ related:
   - "[[DDPM - CFG]]"
   - "[[DDPM - Training]]"
   - "[[DDPM - Broadcasting]]"
-  - "[[DDPM - Sampling]]"
+  - "[[DDPM - Sampling & Generating]]"
   - "[[DDPM - Loss Function]]"
-  - "[[DDPM - sample function]]"
+  - "[[DDPM - sample_ddpm function]]"
   - "[[DDPM - sample_dataset]]"
 ---
 

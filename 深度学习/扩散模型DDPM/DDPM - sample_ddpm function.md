@@ -1,5 +1,5 @@
 ---
-title: 推理/采样函数（DDPM 的反向去噪过程）
+title: 推理/采样函数（DDPM 的反向去噪过程）、Algorithm 2 的代码实现
 tags:
   - Sampling
   - DDPM
@@ -76,13 +76,12 @@ def sample_ddpm(
 这是 PyTorch 中的标准做法——所有 `forward` / `predict` / `sample` 这类==只做推理的函数==，都应该加上 `@torch.no_grad()`。
 
 
-
+### 函数参数
 ```python
 def sample_ddpm(model, betas, alphas_cumprod, alphas_cumprod_prev,
                 sqrt_recip_alphas, posterior_variance,
                 class_onehot, az_vec, shape, device):
 ```
-### 函数参数
 `model` ： 去噪 UNet 模型。
 	- **类型**: `nn.Module`（UNet 实例）
 	- **作用**: 已训练好的噪声预测网络 $\epsilon_\theta(x_t, t, \text{class}, \text{azimuth})$。输入带噪图像 $x_t$、时间步 $t$、类别条件和方位角条件，输出**预测的噪声** $\hat{\epsilon}$。
